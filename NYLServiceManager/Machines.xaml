@@ -1,0 +1,13 @@
+﻿<Window x:Class="NYLServiceManager.Machines"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NYLServiceManager"
+        mc:Ignorable="d"
+        Title="Készülékek" Height="700" Width="1000" WindowStartupLocation="CenterScreen" Background="#FF92BB98">
+    <Grid>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="19,61,0,0" VerticalAlignment="Top" Height="583" Width="946"/>
+
+    </Grid>
+</Window>
