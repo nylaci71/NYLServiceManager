@@ -55,29 +55,40 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Analytics.xaml.cs">
+    <Compile Include="ANALITICS\Analitic.cs" />
+    <Compile Include="ANALITICS\Analytics.xaml.cs">
       <DependentUpon>Analytics.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Machines.xaml.cs">
+    <Compile Include="BaseModel.cs" />
+    <Compile Include="ANALITICS\AnaliticViewModel.cs" />
+    <Compile Include="DocHeader.cs" />
+    <Compile Include="DocItem.cs" />
+    <Compile Include="MACHINES\Machine.cs" />
+    <Compile Include="MACHINES\Machines.xaml.cs">
       <DependentUpon>Machines.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Mechanics.xaml.cs">
+    <Compile Include="MACHINES\MachineViewModel.cs" />
+    <Compile Include="MainViewModel.cs" />
+    <Compile Include="MECHANICS\Mechanic.cs" />
+    <Compile Include="MECHANICS\Mechanics.xaml.cs">
       <DependentUpon>Mechanics.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Partners.xaml.cs">
+    <Compile Include="MECHANICS\MechanicViewModel.cs" />
+    <Compile Include="PARTNERS\Partner.cs" />
+    <Compile Include="PARTNERS\Partners.xaml.cs">
       <DependentUpon>Partners.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Services.xaml.cs">
+    <Compile Include="PARTNERS\PartnerViewModel.cs" />
+    <Compile Include="SERVICES\Services.xaml.cs">
       <DependentUpon>Services.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Worksheet.xaml.cs">
-      <DependentUpon>Worksheet.xaml</DependentUpon>
-    </Compile>
-    <Page Include="Analytics.xaml">
+    <Compile Include="SERVICES\Service.cs" />
+    <Compile Include="SERVICES\ServiceViewModel.cs" />
+    <Page Include="ANALITICS\Analytics.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Machines.xaml">
+    <Page Include="MACHINES\Machines.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -93,19 +104,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Mechanics.xaml">
+    <Page Include="MECHANICS\Mechanics.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Partners.xaml">
+    <Page Include="PARTNERS\Partners.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Services.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Worksheet.xaml">
+    <Page Include="SERVICES\Services.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -136,6 +143,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NYLServiceManager.Dal\NYLServiceManager.Dal.csproj">
+      <Project>{d829a055-03c5-4f52-a5e1-d1a5d87ddcb8}</Project>
+      <Name>NYLServiceManager.Dal</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

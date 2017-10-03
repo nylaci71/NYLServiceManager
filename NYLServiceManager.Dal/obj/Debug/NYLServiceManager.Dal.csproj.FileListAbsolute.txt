@@ -1,0 +1,11 @@
+D:\Projekt\C#Projects\NYLServiceManager\NYLServiceManager.Dal\bin\Debug\NYLServiceManager.Dal.dll
+D:\Projekt\C#Projects\NYLServiceManager\NYLServiceManager.Dal\bin\Debug\NYLServiceManager.Dal.pdb
+D:\Projekt\C#Projects\NYLServiceManager\NYLServiceManager.Dal\obj\Debug\NYLServiceManager.Dal.csprojResolveAssemblyReference.cache
+D:\Projekt\C#Projects\NYLServiceManager\NYLServiceManager.Dal\obj\Debug\NYLServiceManager.Dal.dll
+D:\Projekt\C#Projects\NYLServiceManager\NYLServiceManager.Dal\obj\Debug\NYLServiceManager.Dal.pdb
+E:\C#Projects\NYLServiceManager\NYLServiceManager.Dal\bin\Debug\NYLServiceManager.Dal.dll
+E:\C#Projects\NYLServiceManager\NYLServiceManager.Dal\bin\Debug\NYLServiceManager.Dal.pdb
+E:\C#Projects\NYLServiceManager\NYLServiceManager.Dal\obj\Debug\NYLServiceManager.Dal.csprojResolveAssemblyReference.cache
+E:\C#Projects\NYLServiceManager\NYLServiceManager.Dal\obj\Debug\NYLServiceManager.Dal.csproj.CoreCompileInputs.cache
+E:\C#Projects\NYLServiceManager\NYLServiceManager.Dal\obj\Debug\NYLServiceManager.Dal.dll
+E:\C#Projects\NYLServiceManager\NYLServiceManager.Dal\obj\Debug\NYLServiceManager.Dal.pdb

@@ -20,53 +20,96 @@ namespace NYLServiceManager
     /// </summary>
     public partial class MainWindow : Window
     {
+// variables
+        
+// constructors
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void buttonWorksheet_Click(object sender, RoutedEventArgs e)
+// events
+
+        // Partners    
+        private void buttonPartners_Click(object sender, RoutedEventArgs e) // get partner
         {
-            Worksheet worksheet = new Worksheet();
-            worksheet.Show();
-            //this.Close();
+            
         }
 
-        private void buttonPartners_Click(object sender, RoutedEventArgs e)
+        // Machines
+        private void buttonMachines_Click(object sender, RoutedEventArgs e) // get machine
         {
-            Partners partners = new Partners();
-            partners.Show();
-            //this.Close();
+            
         }
 
-        private void buttonMachines_Click(object sender, RoutedEventArgs e)
+        // Mechanics
+        private void buttonMechanics_Click(object sender, RoutedEventArgs e) // get mechanic
         {
-            Machines machines = new Machines();
-            machines.Show();
-            //this.Close();
+            
         }
 
-        private void buttonServices_Click(object sender, RoutedEventArgs e)
+
+        // Services
+        private void buttonNewService_Click(object sender, RoutedEventArgs e) // add new service
         {
-            Services services = new Services();
-            services.Show();
-            //this.Close();
+
         }
 
-        private void buttonMechanics_Click(object sender, RoutedEventArgs e)
+        private void buttonEditService_Click(object sender, RoutedEventArgs e) // edit an existing service
         {
-            Mechanics mechanics = new Mechanics();
-            mechanics.Show();
-            //this.Close();
+
         }
+
+        private void buttonDelService_Click(object sender, RoutedEventArgs e) // delete service
+        {
+
+        }
+
+
+        // Items
+        private void datagridAddItem_DoubleClick(object sender, MouseButtonEventArgs e) // add article to items
+        {
+
+        }
+
+        private void buttonEditItem_Click(object sender, RoutedEventArgs e) // edit an existing item
+        {
+
+        }
+
+        private void buttonDelItem_Click(object sender, RoutedEventArgs e) // delete item
+        {
+
+        }
+
+
+
+
+
+
+
 
         private void buttonAnalytics_Click(object sender, RoutedEventArgs e)
         {
-            Analytics analytics = new Analytics();
-            analytics.Show();
+            Partners partners = new Partners();
+            partners.Show();
+            partners.DataContext
             //this.Close();
         }
 
         
+
+        
+
+
+
+
+
+        // functions
+
+
+
+
     }
 }

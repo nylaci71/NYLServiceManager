@@ -5,40 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NYLServiceManager"
         mc:Ignorable="d"
-        Title="NYL Service Manager" Height="500" Width="500" Background="#FF92BB98" WindowStartupLocation="CenterScreen">
+        Title="NYL Service Manager - Nyutali László SZF19 (2017)" Height="700" Width="1000" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button x:Name="buttonWorksheet" Content="Munkalap rögzítése" HorizontalAlignment="Center" Margin="44,60,44,0" VerticalAlignment="Top" Width="404" Height="40" FontSize="20" FontFamily="Tahoma" Click="buttonWorksheet_Click">
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
-        <Button x:Name="buttonAnalytics" Content="Munkalap analitika" HorizontalAlignment="Left" Margin="44,368,44,0" VerticalAlignment="Top" Width="405" Height="40" FontSize="20" FontFamily="Tahoma" Click="buttonAnalytics_Click">
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
-        <Button x:Name="buttonMechanics" Content="Szerelők" HorizontalAlignment="Center" Margin="44,292,44,0" VerticalAlignment="Top" Width="405" Height="40" FontSize="20" FontFamily="Tahoma" Click="buttonMechanics_Click">
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
-        <Button x:Name="buttonServices" Content="Alapanyagok, szolgáltatások" HorizontalAlignment="Center" Margin="44,241,44,0" VerticalAlignment="Top" Width="405" Height="40" FontSize="20" FontFamily="Tahoma" Click="buttonServices_Click">
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
-        <Button x:Name="buttonMachines" Content="Készülékek" HorizontalAlignment="Left" Margin="44,190,41,0" VerticalAlignment="Top" Width="405" Height="40" FontSize="20" FontFamily="Tahoma" Click="buttonMachines_Click">
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
-        <Button x:Name="buttonPartners" Content="Partnerek" HorizontalAlignment="Center" Margin="44,139,44,0" VerticalAlignment="Top" Width="405" Height="40" FontFamily="Tahoma" FontSize="20" Click="buttonPartners_Click">
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
-        <Label x:Name="label" Content="FŐMENÜ" HorizontalAlignment="Center" Margin="44,5,44,0" VerticalAlignment="Top" Width="404" FontSize="20" FontWeight="Bold" FontFamily="Tahoma" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Label x:Name="label1" Content="Nyutali László SZF19 (2017)" HorizontalAlignment="Center" Margin="44,437,44,0" VerticalAlignment="Top" Width="404" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Tahoma" FontWeight="Bold"/>
+        <Label Content="MUNKALAP" HorizontalAlignment="Center" Margin="368,1,428,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Height="32" Grid.Column="1"/>
+
+
+        <Label Content="Partner adatai" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Top"/>
+        <ListBox HorizontalAlignment="Left" Height="80" Margin="10,60,0,0" VerticalAlignment="Top" Width="369"/>
+        <Button Content="Partnerek" HorizontalAlignment="Left" Margin="10,145,0,0" VerticalAlignment="Top" Width="369" Height="30" FontFamily="Tahoma" FontSize="14" Click="buttonPartners_Click"/>
+
+
+        <Label Content="Készülék adatai" HorizontalAlignment="Left" Margin="399,34,0,0" VerticalAlignment="Top"/>
+        <ListBox HorizontalAlignment="Left" Height="80" Margin="390,60,0,0" VerticalAlignment="Top" Width="370"/>
+        <Button Content="Készülékek" HorizontalAlignment="Left" Margin="390,145,0,0" VerticalAlignment="Top" Width="370" Height="30" FontSize="14" FontFamily="Tahoma" Click="buttonMachines_Click"/>
+
+
+        <Label Content="Szerelő" HorizontalAlignment="Left" Margin="771,34,0,0" VerticalAlignment="Top"/>
+        <ListBox HorizontalAlignment="Left" Height="80" Margin="771,60,0,0" VerticalAlignment="Top" Width="200"/>
+        <Button Content="Szerelők" HorizontalAlignment="Left" Margin="771,145,0,0" VerticalAlignment="Top" Width="200" Height="30" FontSize="14" FontFamily="Tahoma" Click="buttonMechanics_Click"/>
+
+
+        <Label Content="Alapanyagok, szolgáltatások" HorizontalAlignment="Left" Margin="10,197,0,0" VerticalAlignment="Top"/>
+        <DataGrid HorizontalAlignment="Left" Margin="10,223,0,0" VerticalAlignment="Top" Height="200" Width="750" MouseDoubleClick="datagridAddItem_DoubleClick" Background="White"/>
+        <Button Content="ÚJ szolgáltatás rögzítése" HorizontalAlignment="Left" Margin="772,223,0,0" VerticalAlignment="Top" Width="199" Height="50" FontSize="14" FontFamily="Tahoma" Click="buttonNewService_Click"/>
+        <Button Content="szolgáltatás MÓDOSÍTÁS" HorizontalAlignment="Left" Margin="772,299,0,0" VerticalAlignment="Top" Width="199" Height="50" FontSize="14" FontFamily="Tahoma" Click="buttonEditService_Click"/>
+        <Button Content="szolgáltatás TÖRLÉS" HorizontalAlignment="Left" Margin="772,373,0,0" VerticalAlignment="Top" Width="199" Height="50" FontSize="14" FontFamily="Tahoma" Click="buttonDelService_Click"/>
+
+
+        <Label Content="Bizonylattételek" HorizontalAlignment="Left" Margin="10,428,0,0" VerticalAlignment="Top"/>
+        <DataGrid HorizontalAlignment="Left" Margin="10,454,0,0" VerticalAlignment="Top" Height="200" Width="750" Background="White"/>
+        <Button Content="Tétel MÓDOSÍTÁS" HorizontalAlignment="Left" Margin="772,454,0,0" VerticalAlignment="Top" Width="199" Height="50" FontSize="14" FontFamily="Tahoma" Click="buttonEditItem_Click"/>
+        <Button Content="Tétel TÖRLÉS" HorizontalAlignment="Left" Margin="772,530,0,0" VerticalAlignment="Top" Width="199" Height="50" FontSize="14" FontFamily="Tahoma" Click="buttonDelItem_Click"/>
+
+
+
+        <Button Content="Munkalap analitika" HorizontalAlignment="Left" Margin="772,624,0,0" VerticalAlignment="Top" Width="199" Height="30" FontSize="14" FontFamily="Tahoma" Click="buttonAnalytics_Click"/>
+
+
+
+
 
     </Grid>
 </Window>
