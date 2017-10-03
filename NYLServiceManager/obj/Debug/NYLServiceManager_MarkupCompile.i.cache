@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\C#Projects\NYLServiceManager\NYLServiceManager\obj\Debug\
+D:\Projekt\C#Projects\NYLServiceManager\NYLServiceManager\obj\Debug\
 NYLServiceManager
 none
 false
 DEBUG;TRACE
-E:\C#Projects\NYLServiceManager\NYLServiceManager\App.xaml
+D:\Projekt\C#Projects\NYLServiceManager\NYLServiceManager\App.xaml
 61176311904
 
-28-757907440
-141120544799
+28430196587
+142012654505
 ANALITICS\Analytics.xaml;MACHINES\Machines.xaml;MainWindow.xaml;MECHANICS\Mechanics.xaml;PARTNERS\Partners.xaml;SERVICES\Services.xaml;
 
-False
+True
 
