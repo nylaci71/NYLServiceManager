@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Collections.Generic;
 
 namespace NYLServiceManager
 {
@@ -20,22 +21,37 @@ namespace NYLServiceManager
     /// </summary>
     public partial class MainWindow : Window
     {
-// variables
+        // variables
+        readonly MainViewModel _vm;
+
+
+        // properties
         
-// constructors
+
+        // constructors
 
         public MainWindow()
         {
             InitializeComponent();
+            _vm = new MainViewModel();
+            DataContext = _vm;
+
         }
+
 
 // events
 
         // Partners    
         private void buttonPartners_Click(object sender, RoutedEventArgs e) // get partner
         {
+            PartnerViewModel _p_view_model = new PartnerViewModel();
+            Partners PartnerForm = new Partners { DataContext = _p_view_model }; ;
+            PartnerForm.ShowDialog();
             
+            if (PartnerForm.DialogResult == true)
+                MessageBox.Show(_p_view_model.SelectedPartner.Name);                
         }
+
 
         // Machines
         private void buttonMachines_Click(object sender, RoutedEventArgs e) // get machine
@@ -94,7 +110,7 @@ namespace NYLServiceManager
         {
             Partners partners = new Partners();
             partners.Show();
-            partners.DataContext
+            //partners.DataContext
             //this.Close();
         }
 

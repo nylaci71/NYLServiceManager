@@ -20,7 +20,7 @@ namespace NYLServiceManager
     public partial class Partners : Window
     {
 // variables
-        readonly PartnerViewModel _vm;
+        
 
 // properties
             
@@ -28,28 +28,50 @@ namespace NYLServiceManager
 // constructors
         public Partners()
         {
-            InitializeComponent();
-            _vm = new PartnerViewModel();            
-            DataContext = _vm;
+            InitializeComponent();            
         }
 
-//events
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+//events         
+
+        private void grd_Partners_KeyDown(object sender, KeyEventArgs e)
         {
-            
-
+            if (e.Key == Key.Insert)
+            {
+                SelectPartner();
+            }
+            else if (e.Key == Key.Enter)
+            {
+                MessageBox.Show("Cikk módosítása");
+                e.Handled = true;                
+            }
+            else if (e.Key == Key.Add)
+            {
+                MessageBox.Show("Új cikk");
+                e.Handled = true;
+            }
+            else if (e.Key == Key.Subtract)
+            {
+                MessageBox.Show("Cikk törlése");
+                e.Handled = true;
+            }
         }
 
-     
-        
-
-
-
+        private void btn_PartnerSelect_Click(object sender, RoutedEventArgs e)
+        {
+            SelectPartner();
+        }
 
 
 // functions
 
-
+        private void SelectPartner()
+        {            
+            var _ctx = (PartnerViewModel)DataContext;
+            
+            _ctx.SelectedPartner = grd_Partners.SelectedItem as Partner;
+            DialogResult = _ctx.SelectedPartner != null;
+            Close();            
+        }
 
 
 

@@ -25,17 +25,20 @@ namespace NYLServiceManager
             {
                 PartnerList.Add(new Partner(partner_));
             }
-        }        
+        }
 
 
-// events
+        // events
 
 
 
 
-// functions
+        // functions
 
-
+        public bool CheckPartner(Partner _partner)
+        {
+            return true;
+        }
 
 
 

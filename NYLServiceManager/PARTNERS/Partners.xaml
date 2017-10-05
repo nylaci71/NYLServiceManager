@@ -5,18 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NYLServiceManager"
         mc:Ignorable="d"
-        Title="Partnerek" Height="460" Width="800" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+        Title="Partnerek" Height="460" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>        
         <Label Content="Partnerek" HorizontalAlignment="Center" Margin="20,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Height="40" Grid.Column="1"/>
 
 
-        <DataGrid Name="grd_Partners" ItemsSource="{Binding Path=PartnerList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedPartner}"
+        <DataGrid Name="grd_Partners" ItemsSource="{Binding Path=PartnerList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding Path=SelectedPartner}"
                   Width="750" Height="300" Margin="20,60,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"
                   AlternationCount = "2" AlternatingRowBackground="MintCream" 
-                  CanUserAddRows="False" CanUserReorderColumns="True" CanUserResizeColumns="True" CanUserResizeRows="False" CanUserSortColumns="True"
-                  AutoGenerateColumns="False" SelectionMode="Single" SelectionUnit="Cell">
-            <!-- Klikk események -->
-            <DataGrid.Resources>
+                  CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="True" CanUserResizeColumns="True" CanUserResizeRows="False" CanUserSortColumns="True"
+                  AutoGenerateColumns="False" SelectionMode="Single" SelectionUnit="FullRow" IsSynchronizedWithCurrentItem="true"
+                  KeyDown="grd_Partners_KeyDown">
+                <DataGrid.Resources>
                 <Style TargetType= "DataGridColumnHeader">
                     <Setter Property="Background" Value="DimGray"/>
                     <Setter Property="Foreground" Value="White"/>
@@ -27,15 +27,24 @@
                 <Style TargetType="DataGridCell">
                     <Style.Triggers>
                         <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" Value="MintCream"/>
+                            <Setter Property="Background" Value="DarkSlateGray"/>
+                            <Setter Property="Foreground" Value="White"/>                            
+                            <Setter Property="BorderThickness" Value="0"/>                            
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Background" Value="Beige"/>
                             <Setter Property="Foreground" Value="Black"/>
+                            <Setter Property="BorderBrush" Value="DarkSlateGray"/>
+                            <Setter Property="BorderThickness" Value="1"/>
+                        </Trigger>
+                        <Trigger Property="IsEditing" Value="True">                            
                             <Setter Property="BorderBrush" Value="Red"/>
                             <Setter Property="BorderThickness" Value="1"/>
                         </Trigger>
                     </Style.Triggers>
-                </Style>
+                </Style>                
             </DataGrid.Resources>
-            <DataGrid.Columns>
+            <DataGrid.Columns>                
                 <DataGridTextColumn Header="ID" Binding="{Binding Path=Id}"/>
                 <DataGridTextColumn Header="Név" Binding="{Binding Path=Name}"/>
                 <DataGridTextColumn Header="Irsz" Binding="{Binding Path=Zip}"/>
@@ -43,10 +52,9 @@
                 <DataGridTextColumn Header="Cím" Binding="{Binding Path=Address}"/>
             </DataGrid.Columns>
         </DataGrid>
-
         
         <Button Content="ÚJ PARTNER" HorizontalAlignment="Left" Margin="570,375,0,0" VerticalAlignment="Top" Width="199" Height="35" FontSize="14" FontFamily="Tahoma"/>
-        <Button Content="MÓDOSÍTÁS" HorizontalAlignment="Left" Margin="290,375,0,0" VerticalAlignment="Top" Width="199" Height="35" FontSize="14" FontFamily="Tahoma"/>
+        <Button Content="PARTNER KIVÁLASZTÁSA" HorizontalAlignment="Left" Margin="290,375,0,0" VerticalAlignment="Top" Width="199" Height="35" FontSize="14" FontFamily="Tahoma" Click="btn_PartnerSelect_Click"/>
         <Button Content="TÖRLÉS" HorizontalAlignment="Left" Margin="20,375,0,0" VerticalAlignment="Top" Width="199" Height="35" FontSize="14" FontFamily="Tahoma"/>
 
     </Grid>

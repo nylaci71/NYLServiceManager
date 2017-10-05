@@ -10,16 +10,22 @@ namespace NYLServiceManager
 {
     class MainViewModel : BaseModel
     {
-// variables
+        // variables
 
-// properties
-        
-        
-        
-// constructors
+        // properties
+        public ObservableCollection<DocItem> DocItemList { get; set; }
+        public DocHeader Header { get; set; }
+
+
+        // constructors
         public MainViewModel()
         {
-            
+            DocItemList = new ObservableCollection<DocItem>();
+            var ctx = new Context();
+            foreach (var _doc_item in ctx.DocItems)
+            {
+                DocItemList.Add(new DocItem(_doc_item));
+            }
         }
 
 // events
